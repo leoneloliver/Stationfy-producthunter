@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- 
+
+ _                           _   _____ _ _           _           
+| |                         | | |  _  | (_)         (_)          
+| |     ___  ___  _ __   ___| | | | | | |___   _____ _ _ __ __ _ 
+| |    / _ \/ _ \| '_ \ / _ \ | | | | | | \ \ / / _ \ | '__/ _` |
+| |___|  __/ (_) | | | |  __/ | \ \_/ / | |\ V /  __/ | | | (_| |
+\_____/\___|\___/|_| |_|\___|_|  \___/|_|_| \_/ \___|_|_|  \__,_|
+                                                                 
+Front-end Developer
+Hire me at leoneloliver@gmail.com 
+
+-->
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://assets.producthunt.com/assets/favicon-9247d7de492fd8ec2553739d3635dca4.ico">
+  <link rel="apple-touch-icon-precomposed" href="https://assets.producthunt.com/assets/ph-ios-icon-6b34039e42b660005eafdcc9e153a674.png">
+  <title>New Tech Product - Product Hunt</title>
+  <!-- Material Design Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+  <!-- Template style -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+<body id="app">
+  <!-- Navigation -->
+  <nav class="navbar z-depth-2 info-color">
+    <div class="container container-top">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="logo_5Pf3F" href="#">
+            <span>
+              <svg width="35" height="35" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                  <path d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20" fill="#DA552F"></path>
+                  <path d="M22.667 20H17v-6h5.667c1.656 0 3 1.343 3 3s-1.344 3-3 3m0-10H13v20h4v-6h5.667c3.866 0 7-3.134 7-7s-3.134-7-7-7" fill="#FFF"></path>
+                </g>
+              </svg>
+            </span>
+          </a>   
+      </div>
+      <div class="collapse-- navbar-collapse--" id="bs-example-navbar-collapse-1__">
+        <div class="navbar-nav nav-form">
+        <form class="navbar-form navbar-left waves-effect waves-light col-md-12" role="search">
+          <div class="input-field listing col s12 col-md-12">
+              <input id="search" name="mls_id" type="text" class="validate">
+              <label for="search" class="label-txt"><i class="glyphicon glyphicon-search"></i>&nbsp;Discover your next <span>favorite</span> <span class="">thing</span>...</label>
+          </div>
+        </form>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" role="button" aria-expanded="false"><i class="glyphicon glyphicon-option-horizontal"></i></a>
+            <ul class="dropdown-menu" role="menu">
+              <i class="glyphicon glyphicon-triangle-top menusnip"></i>
+              <li><a>ABOUT</a>
+              </li>
+              <li><a>APPS</a>
+              </li>
+              <li><a>BLOG</a>
+              </li>
+              <li><a>BRANDING</a>
+              </li>
+              <li class="divider"></li>
+              <li><a href="#footer">HIRE ME</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page content -->
+  <div class="container page-content">
+  <div class="row">
+    <div class="col-md-12 box_main center" id="welcome">
+      <div class="categ" ng-controller="ListaCatController">
+        <div><i class="glyphicon glyphicon-remove"></i></div>
+        <h5>Welcome to Product Hunt</h5>
+        <p>The place to discover your next favorite thing.</p>
+          <ul class="category"> 
+            <li class="" ng-repeat="category in categories">
+              <a href="#">{{category.icon}}{{ category.nome }}</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>  
+  <div class="row"> 
+    <div class="col-md-2 col-xs-2 desc-box">
+      <div class="side-menu">       
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">LIVE Chats</a></li>
+        </ul>
+        <div class="title-cat">
+          <span>Categories</span>
+        </div>
+        <div ng-controller="ListaCatController">
+          <ul> 
+            <li class="" ng-repeat="category in categories | limitTo:quantity">
+              <a href="#">{{ category.nome }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="title-cat">
+          <span>Topics</span>
+        </div>
+        <div ng-controller="TopicController">
+          <ul> 
+            <li ng-repeat="topic in topics">
+              <a href="#">{{ topic.title }}</a><span class="emoji" alt="{{ topic.icon }}"><img ng-src="{{ topic.icon }}"></span>
+            </li>
+            <li>
+              <a href="#" class="seeall">SEE ALL</a>
+            </li>
+          </ul>
+        </div>
+      </div>    
+    </div>
+    <div class="row col-md-7 col-xs-10 box-middle">  
+      <div class="marketing" ng-controller="ListaController">
+        <div class="box-title">
+          <div class="col-md-9 col-xs-7"><p>Today in Tech</p></div>
+          <div class="col-md-3 col-xs-5">
+            <a href="" ng-click="predicate='-id'; reverse=!reverse" class="pop">POPULAR</a>&nbsp;&nbsp;<a href="" ng-click="predicate='-data'; reverse=!reverse">NEWEST</a>
+          </div>
+        </div>     
+        <div> 
+          <div class="col-md-12 col-xs-12 product" ng-repeat="item in itens | orderBy:predicate:reverse" data-toggle="modal" data-target="#correct">
+            <div class="col-md-3 col-xs-3">
+              <img class="img-squere" ng-src="{{item.foto}}&fit=crop&h=80&w=80" alt="Generic placeholder image" height="80" width="80">
+            </div>
+            <div class="col-md-9 col-xs-9">
+              <h6>{{ item.produto }}</h6>
+              <p class="short-desc">{{ item.descricao }}</p>
+              <p class="author-name hide">{{ item.author }}</p>
+              <p class="author-avatar hide">{{ item.avatar }}</p>
+              <div>
+                <button><i class="glyphicon glyphicon-triangle-top"></i>&nbsp;{{ item.share }}</button>
+                &nbsp;&nbsp;<button><i class="glyphicon glyphicon-comment"></i>&nbsp;{{ item.coment }}</button>
+                &nbsp;&nbsp;<button class="hidet ng-binding"><i class="glyphicon glyphicon-export"></i>&nbsp;SAVE</button>
+                &nbsp;&nbsp;<button class="hidet ng-binding hide-iphone"><i class="glyphicon glyphicon-new-window"></i></button>
+                <button class="ng-binding right">{{ item.tag }}</button>
+              </div>
+            </div>
+            <div class="bordered"></div>
+          </div>
+          <div class="bar-more scrollToTop"><a href="#"><i class="glyphicon glyphicon-menu-down"></i>&nbsp;&nbsp;SHOW 20 MORE</a></div> 
+        </div>
+      </div>                 
+    </div>
+    <div class="col-md-3 box-right">
+      <div class="col-md-12">
+        <div><i class="glyphicon glyphicon-remove"></i></div>
+          <h5>Product Hunt for Chrome</h5> 
+          <p>A lovely Chrome extension we think you'll love.</p>
+          <button class='btn-download'><img class="icon_c" src="https://s3.amazonaws.com/producthunt/static/icon-chrome.png"> One-click Install</button>
+      </div>
+    </div>
+    <div class="col-md-3 box-right p2">
+        <div class="col-md-12 text-left">
+            <h6>UPCOMING LIVE CHATS</h6>
+            <div ng-controller="AvatarController">
+              <ul> 
+                <li class="" ng-repeat="avatar in avatars">
+                  <img ng-src="{{ avatar.photo }}" class="avatar-side">
+                    <div class="f-info">
+                      <div class="name-a">{{ avatar.name }}</div>
+                      <div class="desc-a">{{ avatar.description }}</div>
+                      <div class="btn-a"><button>REMIND ME</button></div>
+                    </div>
+                </li>
+              </ul>
+              <div><a href="#" class="see">SEE MORE</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 box-right p3">
+        <div class="col-md-12 text-left">
+            <h6>TOP COLLECTIONS</h6>
+            <div ng-controller="CollectController">
+              <ul> 
+                <li ng-repeat="collect in collects">
+                  <a href="#" class="collection" style="background:linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .6)),url({{ collect.img }})">
+                  <span class="collect-title">{{ collect.title }}</span>
+                  <span class="collect-desc">{{ collect.desc }}</span>
+                  <button class="btn-collect">FOLLOW</button>
+                  </a>
+                </li>
+              </ul>
+              <div><a href="#" class="see">SEE MORE</a></div>
+            </div>
+        </div>
+    </div>
+  </div> 
+  </div>
+  </div>
+<div class="chat">
+  <i class="fa fa-weixin" aria-hidden="true"></i>
+</div>
+<div class="modal fade in" id="correct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel6" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+        <div class="col-md-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        </div>
+        <div class="col-md-10 bg">
+          <div> <img class='photo-prod-modal'> </div>
+          <div>
+            <div><h6></h6></div>
+            <p></p>
+            <div class="btns">
+                <div class="about-author">
+                  <span class="author-name"></span>
+                  <span>
+                    <img class="author abig">
+                  </span>
+                  <i class="glyphicon glyphicon-triangle-bottom bsn"></i>
+                </div>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-primary">GET IT</button>
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Website</a></li>
+                    <li><a href="#">App store</a></li>
+                  </ul>
+                  &nbsp;&nbsp;<button type="button" class="btn btn-primary withb"><i class="glyphicon glyphicon-triangle-top icon-small">&nbsp;</i>340</button> <img class="author">
+                </div>
+            </div>
+          </div>
+          <div class="col-md-12 bg-clear">
+            <div><h6 class="clear"></h6></div>
+            <div><p class="clear"></p><div class="tags"></div></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- SCRIPTS -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Material Design Bootstrap -->
+<script type="text/javascript" src="js/mdb.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script type="text/javascript">
+  var remote;
+  var remoteapi = "https://api.producthunt.com/v1/docs//v1/oauth/authorize?client_id=bcd791301cde7f6320764d1f974843429b925fe3b89ed36b70c02c4e3e75a74e&redirect_uri=&response_type=code&scope=public+private";
+  /*test local api*/
+  var localapi = "js/controllers.js";
+</script>
+<script src="js/scripts.js"></script>
+</div>
+</body>
+</html>
