@@ -1,13 +1,10 @@
 var distance = 300;
-
 $('i.glyphicon.glyphicon-remove').eq(0).on('click', function(){
   $("#welcome").slideUp();
 });
-
 $('i.glyphicon.glyphicon-remove').eq(1).on('click', function(){
   $(".box-right").eq(0).slideUp();
 });
-
 $window = $(window);
 $window.scroll(function() {
     if ($window.scrollTop() > distance) {
@@ -18,7 +15,6 @@ $window.scroll(function() {
         $('#welcome').removeClass('hide');
     }
 });
-
 $( document ).ready(function() {
   $(".product").on('click',function(){
     var imgf = $('.img-squere',this).attr('src');
@@ -32,7 +28,6 @@ $( document ).ready(function() {
     $('.modal-content img.author').attr('src',$('.author-avatar', this).text());
     $('.modal-content .tags').text($('button.ng-binding.right',this).text());
 });
-
 $('.scrollToTop').click(function(){
     $('html, body').animate({scrollTop : 0},800);
     window.setTimeout(function(){
@@ -41,15 +36,12 @@ $('.scrollToTop').click(function(){
     return false;
   });
 });
-
 $(".author").on('mouseover', function(){
   $(".about-author").fadeIn();
 });
-
 $(".author").on('mouseleave', function(){
   $(".about-author").fadeOut();
 });
-
 if(remote){
   var appfile = remoteapi;
 }else{
