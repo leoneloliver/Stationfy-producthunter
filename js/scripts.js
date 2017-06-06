@@ -23,7 +23,8 @@ $( document ).ready(function() {
     $('.modal-content img.photo-prod-modal').attr('src',imgn+"&fit=crop&h=200&w=200");
     $('.modal-content .bg').css({'background':'url('+imgn+')','background-size':'cover','background-position':'center'});
     $('.modal-content h6').text($('h6',this).text());
-    $('.modal-content p').text($('.short-desc',this).text()); 
+    $('.modal-content p').text($('.short-desc',this).text());
+    $('.modal-content p.clear').text($('.short-desc', this).text().repeat(20)); 
     $('.modal-content .author-name').text($('.author-name', this).text());
     $('.modal-content img.author').attr('src',$('.author-avatar', this).text());
     $('.modal-content .tags').text($('button.ng-binding.right',this).text());
